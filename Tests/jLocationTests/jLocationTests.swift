@@ -2,11 +2,21 @@ import XCTest
 @testable import jLocation
 
 final class jLocationTests: XCTestCase {
-    func testExample() throws {
-        // XCTest Documentation
-        // https://developer.apple.com/documentation/xctest
-
-        // Defining Test Cases and Test Methods
-        // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
+    
+    var sut: JLocation!
+    
+    override func setUp() {
+        sut = .init()
+    }
+    
+    override func tearDown() {
+        sut = nil
+    }
+    
+    func test_frameworkName() throws {
+        let expectedFrameworkName = "jLocation"
+        let actualFrameworkName = sut.frameworkName
+        
+        XCTAssertEqual(expectedFrameworkName, actualFrameworkName)
     }
 }
