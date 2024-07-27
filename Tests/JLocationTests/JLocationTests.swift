@@ -1,7 +1,7 @@
 import XCTest
-@testable import jLocation
+@testable import JLocation
 
-final class jLocationTests: XCTestCase {
+final class JLocationTests: XCTestCase {
     
     var sut: JLocation!
     
@@ -14,15 +14,8 @@ final class jLocationTests: XCTestCase {
     }
     
     func test_frameworkName() throws {
-        let expectedFrameworkName = "jLocation"
+        let expectedFrameworkName = "JLocation"
         let actualFrameworkName = sut.jLocationFrameworkName
-        
-        XCTAssertEqual(expectedFrameworkName, actualFrameworkName)
-    }
-    
-    func test_test() throws {
-        let expectedFrameworkName = "jNetworking"
-        let actualFrameworkName = sut.jNetworkingFrameworkName
         
         XCTAssertEqual(expectedFrameworkName, actualFrameworkName)
     }

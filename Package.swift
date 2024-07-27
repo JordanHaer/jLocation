@@ -4,32 +4,29 @@
 import PackageDescription
 
 let package = Package(
-    name: "jLocation",
+    name: "JLocation",
     platforms: [
-        .iOS(.v17)
+        .iOS(.v14)
     ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "jLocation",
+            name: "JLocation",
             type: .dynamic,
-            targets: ["jLocation"]),
-    ],
-    dependencies: [
-        .package(url: "https://github.com/JordanHaer/jNetworking", branch: "nobeaver")
+            targets: ["JLocation"]
+        )
     ],
     targets: [
         .target(
-            name: "jLocation",
-            dependencies: [
-                .product(name: "jNetworking", package: "jNetworking"),
-            ],
-            path: "./Sources"
+            name: "JLocation",
+            path: "./Sources",
+            swiftSettings: [
+                .enableExperimentalFeature("StrictConcurrency")
+            ]
         ),
         .testTarget(
-            name: "jLocationTests",
-            dependencies: ["jLocation"],
+            name: "JLocationTests",
+            dependencies: ["JLocation"],
             path: "./Tests"
-        ),
+        )
     ]
 )
